@@ -1,0 +1,33 @@
+from PyQt5.QtWidgets import QApplication,QWidget,QPushButton,QLabel,QLineEdit
+from PyQt5.QtGui import QIcon,QFont
+count = ""
+def calc_count():
+    # numb = enter_number.text()
+    # count = eval(numb) 
+    # enter_number.clear()
+    enter = enter_number
+    print(enter.text())
+    # enter = eval(enter_number)
+    # count_numb = QLabel(f"Answer -> {enter}",win)
+    count_numb.move(190,85)
+app = QApplication([])
+win = QWidget()
+win.setFixedSize(500,200)
+win.setStyleSheet("background-color: lightblue")
+win.setWindowTitle("Calculator")
+text = QLabel("Calculator",win)
+text.setStyleSheet("color: red; font-size: 30px;")
+text.move(200,0)
+enter_number = QLineEdit(win)
+enter_number.move(140,45)
+enter_number.setFixedSize(170,25)
+enter_number.setStyleSheet("background-color:lightyellow;color: blue")
+btn = QPushButton("= count",win)
+btn.move(310,45)
+btn.setFixedSize(70,25)
+btn.setStyleSheet("color: red;background-color:lightgreen;")
+btn.clicked.connect(calc_count)
+count_numb = QLabel(str(f"Answer -> {count}"),win)
+count_numb.move(190,85)
+win.show()
+app.exec_()
